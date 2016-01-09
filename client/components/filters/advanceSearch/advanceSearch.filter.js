@@ -4,13 +4,14 @@ angular.module('projectDashboardApp')
     .filter('advanceSearch', ['$filter', function($filter) {
         return function(data, text) {
             var output = [];
+            var dates = [];
+            var minDate, maxDate;
+            //return with full set of data if there is no filter or filter is empthy string
             if (text == null || text == '') {
                 return data;
             }
             //check how many filters user wants to apply by spliting the incomeing text
             var textArr = text.split(' ');
-            var dates = [];
-            var minDate, maxDate;
             angular.forEach(textArr, function(fil) {
                 //if we see any ranges for the dates
                 if (fil.search('-') !== -1) {
@@ -27,8 +28,10 @@ angular.module('projectDashboardApp')
                         };
                     })
                 } else {
-                    //filter out by keyword or range
-                    output = $filter('filter')(data, fil);
+                    //check to see if there is a pervious filter applied by checking the output length
+                    output = output.length == 0 ? data : output;
+                    //filter out by keyword 
+                    output = $filter('filter')(output, fil);
                 }
 
             });

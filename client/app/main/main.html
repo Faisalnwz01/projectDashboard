@@ -1,42 +1,56 @@
 <section layout="row" flex>
     <md-sidenav class="md-sidenav-left md-whiteframe-z2 sideNavbar" md-component-id="left" md-is-locked-open="$mdMedia('min-width: 333px')">
-        <md-toolbar class="md-theme-indigo md-whiteframe-21dp">
+        <md-toolbar class="sideNavHeader md-whiteframe-21dp">
             <h4 class="headerContent ">Project Dashboard</h4>
         </md-toolbar>
         <md-content layout-padding>
-        <img id="dashboardImg" src="assets/images/dashboard.svg" alt="">
+            <img id="dashboardImg" src="assets/images/dashboard.svg" alt="">
             <h4 class="colorPrime headerContent" style="margin-top: -21px;">Dashboard</h4>
             <md-divider></md-divider>
-        <img id="dashboardImg" src="assets/images/profile.svg" alt="">
+            <img id="dashboardImg" src="assets/images/profile.svg" alt="">
             <h4 class="headerContent" style="margin-top: -21px;">Profile</h4>
             <md-divider></md-divider>
         </md-content>
     </md-sidenav>
-    <md-content flex>
+    <md-content>
         <div>
             <md-toolbar layout="row" layout-align="end center" class="md-default-theme">
-                <!-- <md-button class="md-icon-button md-primary"><i class="fa fa-search fa-lg"></i></md-button> -->
                 <md-button class="md-icon-button md-primary"><i class="fa fa-bell fa-lg"></i></md-button>
                 <md-button class="md-icon-button md-primary"><i class="fa fa-cog fa-lg"></i></md-button>
                 <md-button class="md-icon-button md-primary"><i class="fa fa-bars fa-lg"></i></md-button>
             </md-toolbar>
         </div>
-        <div layout="column" layout-fill layout-align="top center">
-            <md-card id="searchCard">
-                <md-input-container class="md-block">
-                    <label>Search</label>
-                    <input required name="searchFilter" ng-model="main.searchFilters">
-                    <div ng-messages="projectForm.searchFilter.$error">
-                        <div ng-message="required">Input search queries to filter.</div>
+        <div layout="column" id="mainContnet">
+            <div layout="row" id="statsRow">
+                <md-card flex="50" class="md-whiteframe-5dp">
+                    <md-subheader class="md-primary stackHeader">Statistics</md-subheader>
+                    <div layout="row" id="recordStats">
+                        <div flex="50">
+                            <md-subheader>Records Divisions</md-subheader>
+                            <p class="listItems" ng-repeat='(key, val) in main.statusForRecords.divisions' ng-if="val > 0">{{key}}: {{val}}</p>
+                        </div>
+                        <div flex>
+                            <md-subheader>Records Status</md-subheader>
+                            <p class="listItems" ng-repeat='(key, val) in main.statusForRecords.status' ng-if="val > 0">{{key}}: {{val}}</p>
+                        </div>
                     </div>
-                </md-input-container>
-            </md-card>
-            <div>
-                <md-button id="moreInfoButton" ng-disabled="true" class="md-reaised md-primary">New Record</md-button>
-                <md-button id="moreInfoButton" ng-disabled="true" class="md-reaised md-primary">Export</md-button>
+                </md-card>
+                <md-card id="searchCard" class="md-whiteframe-5dp">
+                    <md-subheader class="md-primary stackHeader">Controls</md-subheader>
+                    <md-input-container flex class="md-block" id="searchContainer">
+                        <label><i class="fa fa-search"></i> Search</label>
+                        <input required name="searchFilter" ng-model="main.searchFilters">
+                        <div ng-messages="projectForm.searchFilter.$error">
+                            <div ng-message="required">Input search queries to filter.</div>
+                        </div>
+                    </md-input-container>
+                    <div>
+                        <md-button id="moreInfoButton" ng-disabled="true" class="md-reaised md-primary">Add Record</md-button>
+                        <md-button id="moreInfoButton" ng-disabled="true" class="md-reaised md-primary">Export</md-button>
+                    </div>
+                </md-card>
             </div>
-           <record datasource="main.projects" filter="main.searchFilters"></record>
+            <record id="record" datasource="main.projects" filter="main.searchFilters"></record>
         </div>
-        <div flex></div>
     </md-content>
 </section>

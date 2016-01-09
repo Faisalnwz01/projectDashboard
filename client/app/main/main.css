@@ -3,6 +3,10 @@
     min-height: 100vh;
 }
 
+.sideNavHeader {
+    background-color: rgb(231, 87, 83) !important;
+}
+
 .headerContent {
     text-align: center;
 }
@@ -28,17 +32,36 @@
     max-height: 15px;
 }
 
-#projSpan {
-    padding-left: 5px;
-}
-
 #moreInfoButton {
     float: right;
 }
 
 #dashboardImg {
-    height: 70px;
-    margin-left: 21px;
+    height: 60px;
+    margin-left: 27px;
 }
 
+.listItems {
+    margin-left: 20px;
+}
 
+#searchContainer {
+    margin-top: 60px;
+}
+
+#mainContnet {
+    padding-left: 6%;
+}
+
+#statsRow {
+    max-width: 80%;
+}
+
+#recordStats {
+    padding: 0 20px;
+}
+
+.stackHeader {
+    font-size: 22px;
+    text-align: center;
+}
