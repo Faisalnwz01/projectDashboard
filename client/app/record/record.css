@@ -1,0 +1,28 @@
+.projectFields {
+    color: black;
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+.projCard {
+    min-width: 316px !important;
+}
+
+.projCard.ng-move,
+.projCard.ng-enter,
+.projCard.ng-leave {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.projCard.ng-leave.ng-leave-active,
+.projCard.ng-move,
+.projCard.ng-enter {
+    opacity: 0;
+}
+
+.projCard.ng-leave,
+.projCard.ng-move.ng-move-active,
+.projCard.ng-enter.ng-enter-active {
+    opacity: 1;
+}

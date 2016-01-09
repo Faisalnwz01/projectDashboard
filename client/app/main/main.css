@@ -1,0 +1,44 @@
+.sideNavbar {
+    max-width: 120px;
+    min-height: 100vh;
+}
+
+.headerContent {
+    text-align: center;
+}
+
+.colorPrime {
+    color: rgb(231, 87, 83);
+}
+
+#searchCard {
+    width: 68%;
+    padding: 0px 30px;
+}
+
+#editIcon {
+    height: 10px;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+#editInput {
+    margin: 0px;
+    max-height: 15px;
+}
+
+#projSpan {
+    padding-left: 5px;
+}
+
+#moreInfoButton {
+    float: right;
+}
+
+#dashboardImg {
+    height: 70px;
+    margin-left: 21px;
+}
+
+
