@@ -28,14 +28,14 @@ Running `npm test` will run the unit tests with karma.
 
 
 ###Code Guide
--app/main Main state/route for project dashboard. This serve as main route for out app.
+-client/app/main Main state/route for project dashboard. This serve as main route for out app.
  	-main.controller.js controller for this route.
  	-main.controller.spec.js unit test for this route.
  	-main.css all the css for this route.
  	-main.html html file for this route.
  	-main.js ui-state setup for this route.
 
--app/record An angular directive for record cards.
+-client/app/record An angular directive for record cards.
 	-record.css all the css for this directive.
 	-record.directive.js javascript for the directive file.
 	-record.directive.spec.js unit test for this directive
