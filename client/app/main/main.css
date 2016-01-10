@@ -17,7 +17,6 @@
 
 #searchCard {
     width: 68%;
-    padding: 0px 30px;
 }
 
 #editIcon {
@@ -46,15 +45,17 @@
 }
 
 #searchContainer {
-    margin-top: 60px;
+    margin: 0px 30px;
+    margin-top: 40px;
 }
 
 #mainContnet {
-    padding-left: 6%;
+    padding-left: 5%;
+    max-width: 96%;
 }
 
 #statsRow {
-    max-width: 80%;
+    max-width: 83%;
 }
 
 #recordStats {

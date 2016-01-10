@@ -23,7 +23,12 @@
         <div layout="column" id="mainContnet">
             <div layout="row" id="statsRow">
                 <md-card flex="50" class="md-whiteframe-5dp">
-                    <md-subheader class="md-primary stackHeader">Statistics</md-subheader>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title md-primary">Statistics</span>
+                            <span class="md-subhead">high-level/summations</span>
+                        </md-card-header-text>
+                    </md-card-header>
                     <div layout="row" id="recordStats">
                         <div flex="50">
                             <md-subheader>Records Divisions</md-subheader>
@@ -36,7 +41,12 @@
                     </div>
                 </md-card>
                 <md-card id="searchCard" class="md-whiteframe-5dp">
-                    <md-subheader class="md-primary stackHeader">Controls</md-subheader>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title ">Controls</span>
+                            <span class="md-subhead">Filter/Export</span>
+                        </md-card-header-text>
+                    </md-card-header>
                     <md-input-container flex class="md-block" id="searchContainer">
                         <label><i class="fa fa-search"></i> Search</label>
                         <input required name="searchFilter" ng-model="main.searchFilters">

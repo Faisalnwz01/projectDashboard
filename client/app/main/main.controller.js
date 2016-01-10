@@ -1,12 +1,9 @@
 'use strict';
 
 (function() {
-
     class MainController {
-        constructor($http, API, lodash) {
-            this.$http = $http;
+        constructor(API, lodash, $scope, $mdToast) {
             this.projects = [];
-
             //just incase we want to add a button to search instead of on click
             this.search = function(searchParam) {
                 this.filters = searchParam;
@@ -22,14 +19,24 @@
                 this.statusForRecords.status = lodash.countBy(records, function(n) {
                     return n['status'];
                 });
-
             };
-            //get the data from the mock data factory
+            $scope.$on('changedRecord', function(message, content) {
+                    console.log(message, content)
+                    $mdToast.show(
+                        $mdToast.simple()
+                        .textContent(content)
+                        .position('right top')
+                        .capsule(true)
+                        .hideDelay(3000)
+                    );
+
+                })
+                //get the data from the mock data factory
             API.getMockData().then(response => {
                 this.projects = response;
                 this.gatherStatus(this.projects);
             });
-           
+
         }
     }
 
