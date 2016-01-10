@@ -12,7 +12,7 @@
 
 ### Developing
 
-1. Run `npm install` to install server dependencies.
+1. Run `npm install` to grunt and node modules dependencies.
 
 2. Run `bower install` to install front-end dependencies.
 
@@ -25,3 +25,27 @@ Run `grunt build` for building and `grunt serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+
+###Code Guide
+-app/main Main state/route for project dashboard. This serve as main route for out app.
+ 	-main.controller.js controller for this route.
+ 	-main.controller.spec.js unit test for this route.
+ 	-main.css all the css for this route.
+ 	-main.html html file for this route.
+ 	-main.js ui-state setup for this route.
+
+-app/record An angular directive for record cards.
+	-record.css all the css for this directive.
+	-record.directive.js javascript for the directive file.
+	-record.directive.spec.js unit test for this directive
+	-record.html html file for this directive.
+
+-client/componets/filters/advanceSearch custom angular filter for input search.
+	-advanceSearch.filter.js javascript for this filter.
+	-advanceSearch.filter.spec.js unit test for this custome angular filter.
+
+-client/componets/API severs as an angular factory to get the mock data from json file.
+	-API.service.js javascript for the api
+	API.service.spec.js unit test for the api.
+
